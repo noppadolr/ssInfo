@@ -1,0 +1,122 @@
+unit ConnectionForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
+  cxLookAndFeelPainters, cxContainer, cxEdit, dxSkinsCore, dxSkinBlack,
+  dxSkinBlue, dxSkinBlueprint, dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom,
+  dxSkinDarkSide, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
+  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
+  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
+  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
+  dxSkinOffice2007Silver, dxSkinOffice2010Black, dxSkinOffice2010Blue,
+  dxSkinOffice2010Silver, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
+  dxSkinOffice2013White, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
+  dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic, dxSkinSharp, dxSkinSharpPlus,
+  dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
+  dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine,
+  dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
+  dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
+  dxSkinXmas2008Blue, Vcl.Menus, Vcl.StdCtrls, cxButtons, cxLabel, cxTextEdit,IniFiles,
+  cxMaskEdit, cxSpinEdit;
+
+type
+  TFormConnection = class(TForm)
+    EditDatabase: TcxTextEdit;
+    Edituser: TcxTextEdit;
+    Editpassword: TcxTextEdit;
+    BtnSave: TcxButton;
+    BtnConnect: TcxButton;
+    EditPort: TcxTextEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    EditServer: TEdit;
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BtnConnectClick(Sender: TObject);
+    procedure BtnSaveClick(Sender: TObject);
+
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    controlstore : TIniFile;
+
+  end;
+
+var
+  FormConnection: TFormConnection;
+
+implementation
+
+{$R *.dfm}
+
+uses Datamodule, LoginForm;
+
+
+procedure TFormConnection.BtnConnectClick(Sender: TObject);
+begin
+      dmu.MyConnection1.Connected:=False;
+      dmu.MyConnection1.Server:=EditServer.Text;
+      dmu.MyConnection1.Database:=editdatabase.Text;
+      dmu.MyConnection1.Username:=Edituser.Text;
+      dmu.MyConnection1.Password:=editpassword.Text;
+      dmu.MyConnection1.Port:=strtointdef(editport.text,3333);
+      screen.cursor:=crhourglass;
+      try
+        dmu.MyConnection1.Connected:=true;
+        if dmu.MyConnection1.Connected then ShowMessage('Connect OK...');
+        Except
+        on e:exception do
+        begin
+          screen.Cursor:=crDefault;
+          ShowMessage('Connect Error !!!'+#13+e.Message);
+        end;
+      end;
+      screen.Cursor:=crDefault;
+end;
+
+procedure TFormConnection.BtnSaveClick(Sender: TObject);
+begin
+  controlstore:=Tinifile.Create(ExtractFilePath(Application.ExeName) + '\databaseProperties.ini');
+  controlstore.WriteString('SECURITY', 'PASSWORD', (Editpassword.text));
+  controlstore.WriteString('SECURITY', 'DB_SERVER', EditServer.text);
+  controlstore.WriteString('SECURITY', 'USERNAME', Edituser.text);
+  controlstore.WriteString('SECURITY', 'DB_NAME', editdatabase.text);
+  controlstore.WriteString('SECURITY', 'DB_PORT', editport.text);
+  ShowMessage('OK');
+end;
+
+procedure TFormConnection.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+        action := cafree;
+
+
+end;
+
+procedure TFormConnection.FormCreate(Sender: TObject);
+//var szpath : array[0..254] of char;
+   //  x:string;
+begin
+  Inherited;
+
+    controlstore:=Tinifile.Create(ExtractFilePath(Application.ExeName) + '\databaseProperties.ini');
+    Editpassword.Text := (controlstore.ReadString('SECURITY','PASSWORD',''));
+    Edituser.Text := controlstore.ReadString('SECURITY','USERNAME','root');
+
+    EditServer.Text:=controlstore.ReadString('SECURITY','DB_SERVER','localhost');
+    EditDatabase.Text := controlstore.ReadString('SECURITY','DB_NAME','hdc14_local');
+    EditPort.text := controlstore.ReadString('SECURITY','DB_PORT','3306');
+
+
+end;
+
+
+end.

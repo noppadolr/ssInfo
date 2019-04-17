@@ -1,0 +1,82 @@
+unit LoginForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, dxGDIPlusClasses,
+  Vcl.StdCtrls,inifiles;
+
+type
+  TFormLogin = class(TForm)
+    Panel1: TPanel;
+    Image1: TImage;
+    btnConnectiomSetting: TButton;
+    EdtUser: TEdit;
+    EdtPassword: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    BtnLogin: TButton;
+    BtnCancel: TButton;
+    procedure BtnCancelClick(Sender: TObject);
+    procedure btnConnectiomSettingClick(Sender: TObject);
+    procedure BtnLoginClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormLogin: TFormLogin;
+
+implementation
+
+{$R *.dfm}
+
+uses  Mainform, AllUnit, DataModule, ConnectionForm;
+
+procedure TFormLogin.BtnCancelClick(Sender: TObject);
+begin
+Application.Terminate;
+end;
+
+
+
+procedure TFormLogin.btnConnectiomSettingClick(Sender: TObject);
+begin
+    if FormConnection=nil then FormConnection:=TFormConnection.Create(self);
+    FormConnection.ShowModal;
+
+
+end;
+
+procedure TFormLogin.BtnLoginClick(Sender: TObject);
+begin
+    DMU.MyConnection1.Close;
+    edtUser.Text:='05964';
+    edtPassword.Text:='0000000000002';
+    with dmu.MyQuery1 do
+    begin
+      Close;
+      SQL.Clear;
+      SQL.Add('SELECT ');
+      SQL.Add(' pr.HOSPCODE,pr.CID');
+      SQL.Add(',concat(cp.detail,pr.`NAME`,"   ",pr.LNAME)as name');
+      SQL.Add(',pr.PROVIDERTYPE');
+      SQL.Add(',ct.providertype');
+      SQL.Add('FROM provider as pr');
+      SQL.Add('LEFT JOIN cprename as cp on pr.PRENAME=cp.id_prename');
+      SQL.Add('LEFT JOIN cprovidertype as ct on pr.PROVIDERTYPE=ct.id_providertype');
+      SQL.Add('');
+      SQL.Add('WHERE pr.HOSPCODE='+Trim(edtUser.Text));
+      SQL.Add('AND pr.CID='+Trim(edtPassword.Text));
+      SQL.Add('');
+      SQL.Add('GROUP BY concat(pr.HOSPCODE,pr.CID)');
+      SQL.Add('');
+      Open;
+    end;
+
+end;
+
+end.

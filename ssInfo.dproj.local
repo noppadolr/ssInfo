@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/04/17 09:27:47.000.901,=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2019/04/17 09:28:39.000.449,C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\MainForm.pas=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2019/04/17 09:28:39.000.449,C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\MainForm.dfm=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2019/04/17 09:28:47.000.720,C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\ssInfo.dproj=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2019/04/17 09:31:26.000.346,=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\Unit1.pas</Transaction>
+    <Transaction>2019/04/17 09:31:49.000.098,=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\Unit1.pas</Transaction>
+    <Transaction>2019/04/17 09:43:59.000.245,C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\DataModule.pas=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\Unit1.pas</Transaction>
+    <Transaction>2019/04/17 09:43:59.000.245,C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\DataModule.dfm=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\Unit1.dfm</Transaction>
+    <Transaction>2019/04/17 10:37:32.000.834,=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\AllUnit.pas</Transaction>
+    <Transaction>2019/04/17 10:37:51.000.864,=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\LoginForm.pas</Transaction>
+    <Transaction>2019/04/17 11:14:58.000.338,=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\ConnectionForm.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,108 @@
+object FormConnection: TFormConnection
+  Left = 0
+  Top = 0
+  Caption = 'Sansai Info - '#3605#3633#3657#3591#3588#3656#3634#3585#3634#3619#3648#3594#3639#3656#3629#3617#3605#3656#3629
+  ClientHeight = 376
+  ClientWidth = 604
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 179
+    Top = 80
+    Width = 32
+    Height = 13
+    Alignment = taRightJustify
+    Caption = 'Server'
+  end
+  object Label2: TLabel
+    Left = 165
+    Top = 107
+    Width = 46
+    Height = 13
+    Alignment = taRightJustify
+    Caption = 'Database'
+  end
+  object Label3: TLabel
+    Left = 159
+    Top = 134
+    Width = 52
+    Height = 13
+    Alignment = taRightJustify
+    Caption = 'User Name'
+  end
+  object Label4: TLabel
+    Left = 165
+    Top = 161
+    Width = 46
+    Height = 13
+    Alignment = taRightJustify
+    Caption = 'Password'
+  end
+  object Label5: TLabel
+    Left = 191
+    Top = 185
+    Width = 20
+    Height = 13
+    Alignment = taRightJustify
+    Caption = 'Port'
+  end
+  object EditDatabase: TcxTextEdit
+    Left = 225
+    Top = 99
+    TabOrder = 0
+    Width = 121
+  end
+  object Edituser: TcxTextEdit
+    Left = 225
+    Top = 126
+    TabOrder = 1
+    Width = 121
+  end
+  object Editpassword: TcxTextEdit
+    Left = 225
+    Top = 153
+    TabOrder = 2
+    Width = 121
+  end
+  object BtnSave: TcxButton
+    Left = 225
+    Top = 222
+    Width = 121
+    Height = 25
+    Caption = #3610#3633#3609#3607#3638#3585
+    TabOrder = 3
+    OnClick = BtnSaveClick
+  end
+  object BtnConnect: TcxButton
+    Left = 381
+    Top = 72
+    Width = 151
+    Height = 129
+    Caption = #3607#3604#3626#3629#3610#3585#3634#3619#3648#3594#3639#3656#3629#3617#3605#3656#3629
+    TabOrder = 4
+    OnClick = BtnConnectClick
+  end
+  object EditPort: TcxTextEdit
+    Left = 225
+    Top = 177
+    TabOrder = 5
+    Width = 121
+  end
+  object EditServer: TEdit
+    Left = 225
+    Top = 72
+    Width = 121
+    Height = 21
+    TabOrder = 6
+  end
+end
