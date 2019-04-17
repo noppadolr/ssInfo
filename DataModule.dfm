@@ -7,6 +7,7 @@ object DMU: TDMU
     Options.Charset = 'utf8'
     Username = 'root'
     Server = '127.0.0.1'
+    Connected = True
     LoginPrompt = False
     Left = 88
     Top = 56

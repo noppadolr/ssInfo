@@ -12,5 +12,8 @@
     <Transaction>2019/04/17 10:37:32.000.834,=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\AllUnit.pas</Transaction>
     <Transaction>2019/04/17 10:37:51.000.864,=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\LoginForm.pas</Transaction>
     <Transaction>2019/04/17 11:14:58.000.338,=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\ConnectionForm.pas</Transaction>
+    <Transaction>2019/04/17 14:30:05.943,=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\Unit1.pas</Transaction>
+    <Transaction>2019/04/17 14:31:50.502,C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\PregOver42Form.pas=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\Unit1.pas</Transaction>
+    <Transaction>2019/04/17 14:31:50.502,C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\PregOver42Form.dfm=C:\Users\Noppadol\Documents\Embarcadero\Studio\Projects\ssInfo\Unit1.dfm</Transaction>
   </Transactions>
 </BorlandProject>

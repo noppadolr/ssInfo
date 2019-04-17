@@ -20,9 +20,12 @@ type
     dxBarManager1: TdxBarManager;
     dxRibbonStatusBar1: TdxRibbonStatusBar;
     dxRibbon1Tab2: TdxRibbonTab;
+    dxBarManager1Bar1: TdxBar;
+    btnPregOver42: TdxBarLargeButton;
     procedure FormCreate(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure btnPregOver42Click(Sender: TObject);
 
    const  AppName  = 'Sansai Info';
   private
@@ -45,7 +48,14 @@ implementation
 
 {$R *.dfm}
 
-uses DataModule, AllUnit, LoginForm;
+uses DataModule, AllUnit, LoginForm, ConnectionForm, PregOver42Form;
+
+procedure TFormMain.btnPregOver42Click(Sender: TObject);
+begin
+    if FormPregOver42=nil then FormPregOver42:=TFormPregOver42.Create(self);
+    FormPregOver42.ShowModal;
+
+end;
 
 procedure TFormMain.FormActivate(Sender: TObject);
 begin

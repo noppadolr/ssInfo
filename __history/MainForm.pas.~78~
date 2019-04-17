@@ -7,7 +7,11 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
   cxLookAndFeelPainters, dxRibbonSkins, dxSkinsCore, dxSkinsDefaultPainters,
   dxRibbonCustomizationForm, cxClasses, dxBar, dxRibbon, dxStatusBar,
-  dxRibbonStatusBar;
+  dxRibbonStatusBar, cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage,
+  cxEdit, cxNavigator, dxDateRanges,
+  cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData,
+  cxGridLevel, cxGridCustomView, cxGridCustomTableView, cxGridTableView,
+  cxGridDBTableView, cxGrid;
 
 type
   TFormMain = class(TForm)
@@ -15,9 +19,15 @@ type
     dxRibbon1: TdxRibbon;
     dxBarManager1: TdxBarManager;
     dxRibbonStatusBar1: TdxRibbonStatusBar;
+    dxRibbon1Tab2: TdxRibbonTab;
+    dxRibbon1Tab3: TdxRibbonTab;
+    dxRibbon1Tab4: TdxRibbonTab;
+    dxRibbon1Tab5: TdxRibbonTab;
     procedure FormCreate(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+
+   const  AppName  = 'Sansai Info';
   private
     { Private declarations }
   public
@@ -27,6 +37,7 @@ type
     TraceString : TStringList;
     login,first : Boolean;
     stLat,stLng,mysqlver : string;
+
 
   end;
 
@@ -68,6 +79,7 @@ procedure TFormMain.FormShow(Sender: TObject);
 begin
       self.SetFocus;
       dxRibbonStatusBar1.Panels[1].Text := user_name;
+      self.Caption:=Application.Title;
 end;
 
 end.

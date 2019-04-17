@@ -1,0 +1,85 @@
+unit PregOver42Form;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
+  cxLookAndFeelPainters, dxRibbonSkins, dxSkinsCore, dxSkinsDefaultPainters,
+  dxRibbonCustomizationForm, dxStatusBar, dxRibbonStatusBar, cxClasses, dxBar,
+  dxRibbon, Data.DB, DBAccess, MyAccess, MemDS, cxStyles, cxCustomData,
+  cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, dxDateRanges,
+  cxDataControllerConditionalFormattingRulesManagerDialog, cxDBData,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGridLevel,
+  cxGridCustomView, cxGrid, cxTextEdit;
+
+type
+  TFormPregOver42 = class(TForm)
+    dxRibbon1Tab1: TdxRibbonTab;
+    dxRibbon1: TdxRibbon;
+    dxBarManager1: TdxBarManager;
+    dxRibbonStatusBar1: TdxRibbonStatusBar;
+    btnExportExcel: TdxBarLargeButton;
+    PintReport: TdxBarLargeButton;
+    dxBarManager1Bar2: TdxBar;
+    btnNameList: TdxBarLargeButton;
+    MyQuery1: TMyQuery;
+    MyDataSource1: TMyDataSource;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    cxGrid1DBTableView1HOSPCODE: TcxGridDBColumn;
+    cxGrid1DBTableView1hosname: TcxGridDBColumn;
+    cxGrid1DBTableView1c: TcxGridDBColumn;
+    btnReport: TdxBarLargeButton;
+    dxBarSubItem1: TdxBarSubItem;
+    dxBarButton1: TdxBarButton;
+    dxBarButton2: TdxBarButton;
+    cxGrid2DBTableView1: TcxGridDBTableView;
+    cxGrid2Level1: TcxGridLevel;
+    cxGrid2: TcxGrid;
+    procedure FormCreate(Sender: TObject);
+    procedure btnNameListClick(Sender: TObject);
+    procedure btnReportClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormPregOver42: TFormPregOver42;
+
+implementation
+
+{$R *.dfm}
+
+uses AllUnit, ConnectionForm, DataModule, LoginForm, MainForm;
+const fname='รายงานหญิงตั้งครรภ์ที่มีอายุครรภ์เกิน 42 สัปดาห์';
+procedure TFormPregOver42.btnNameListClick(Sender: TObject);
+begin
+  cxGrid1.Visible:=False;
+  btnNameList.Enabled:=false;
+  btnReport.Enabled:=true;
+  cxGrid2.Visible:=true;
+  cxGrid2.Align:=alClient;
+end;
+
+procedure TFormPregOver42.btnReportClick(Sender: TObject);
+begin
+    cxGrid1.Visible:=true;
+    btnNameList.Enabled:=true;
+    btnReport.Enabled:=true;
+    cxGrid2.Visible:=false;
+
+end;
+
+procedure TFormPregOver42.FormCreate(Sender: TObject);
+begin
+  dxRibbonStatusBar1.Panels[1].Text:=FormMain.dxRibbonStatusBar1.Panels[1].Text;
+  Caption:=FormMain.Caption+' :: '+fname;
+  MyQuery1.Connection:=DMU.MyConnection1;
+end;
+
+end.

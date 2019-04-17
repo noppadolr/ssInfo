@@ -6,7 +6,8 @@ uses
   DataModule in 'DataModule.pas' {DMU: TDataModule},
   AllUnit in 'AllUnit.pas',
   LoginForm in 'LoginForm.pas' {FormLogin},
-  ConnectionForm in 'ConnectionForm.pas' {FormConnection};
+  ConnectionForm in 'ConnectionForm.pas' {FormConnection},
+  PregOver42Form in 'PregOver42Form.pas' {FormPregOver42};
 
 {$R *.res}
 

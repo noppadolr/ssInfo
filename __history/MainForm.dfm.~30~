@@ -16,6 +16,7 @@ object FormMain: TFormMain
   WindowState = wsMaximized
   OnActivate = FormActivate
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object dxRibbon1: TdxRibbon
@@ -29,10 +30,20 @@ object FormMain: TFormMain
     TabOrder = 0
     TabStop = False
     object dxRibbon1Tab1: TdxRibbonTab
-      Active = True
-      Caption = 'dxRibbon1Tab1'
+      Caption = 'MCH'
       Groups = <>
       Index = 0
+    end
+    object dxRibbon1Tab2: TdxRibbonTab
+      Active = True
+      Caption = 'EPI'
+      Groups = <>
+      Index = 1
+    end
+    object dxRibbon1Tab3: TdxRibbonTab
+      Caption = 'dxRibbon1Tab3'
+      Groups = <>
+      Index = 2
     end
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
@@ -58,7 +69,7 @@ object FormMain: TFormMain
       end
       item
         PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
-        Width = 200
+        Width = 300
       end
       item
         PanelStyleClassName = 'TdxStatusBarTextPanelStyle'
@@ -85,8 +96,8 @@ object FormMain: TFormMain
       True)
     PopupMenuLinks = <>
     UseSystemFont = True
-    Left = 216
-    Top = 104
+    Left = 144
+    Top = 80
     PixelsPerInch = 96
   end
 end

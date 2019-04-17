@@ -30,12 +30,15 @@ object FormMain: TFormMain
     TabOrder = 0
     TabStop = False
     object dxRibbon1Tab1: TdxRibbonTab
+      Active = True
       Caption = 'MCH'
-      Groups = <>
+      Groups = <
+        item
+          ToolbarName = 'dxBarManager1Bar1'
+        end>
       Index = 0
     end
     object dxRibbon1Tab2: TdxRibbonTab
-      Active = True
       Caption = 'EPI'
       Groups = <>
       Index = 1
@@ -91,8 +94,35 @@ object FormMain: TFormMain
       True)
     PopupMenuLinks = <>
     UseSystemFont = True
-    Left = 144
-    Top = 80
+    Left = 520
+    Top = 65520
     PixelsPerInch = 96
+    object dxBarManager1Bar1: TdxBar
+      Caption = #3619#3634#3618#3591#3634#3609
+      CaptionButtons = <>
+      DockedLeft = 0
+      DockedTop = 0
+      FloatLeft = 759
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'btnPregOver42'
+        end>
+      OneOnRow = True
+      Row = 0
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
+    object btnPregOver42: TdxBarLargeButton
+      Caption = #3605#3633#3657#3591#3588#3619#3619#3616#3660' '#3648#3585#3636#3609' 42 Weeks'
+      Category = 0
+      Hint = #3605#3633#3657#3591#3588#3619#3619#3616#3660' '#3648#3585#3636#3609' 42 Weeks'
+      Visible = ivAlways
+      OnClick = btnPregOver42Click
+    end
   end
 end
