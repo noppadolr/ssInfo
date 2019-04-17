@@ -30,10 +30,15 @@ object FormMain: TFormMain
     TabOrder = 0
     TabStop = False
     object dxRibbon1Tab1: TdxRibbonTab
-      Active = True
-      Caption = 'dxRibbon1Tab1'
+      Caption = 'MCH'
       Groups = <>
       Index = 0
+    end
+    object dxRibbon1Tab2: TdxRibbonTab
+      Active = True
+      Caption = 'EPI'
+      Groups = <>
+      Index = 1
     end
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
