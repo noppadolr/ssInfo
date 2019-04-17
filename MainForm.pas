@@ -20,9 +20,6 @@ type
     dxBarManager1: TdxBarManager;
     dxRibbonStatusBar1: TdxRibbonStatusBar;
     dxRibbon1Tab2: TdxRibbonTab;
-    dxRibbon1Tab3: TdxRibbonTab;
-    dxRibbon1Tab4: TdxRibbonTab;
-    dxRibbon1Tab5: TdxRibbonTab;
     procedure FormCreate(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormShow(Sender: TObject);

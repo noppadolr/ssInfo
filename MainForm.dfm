@@ -35,25 +35,10 @@ object FormMain: TFormMain
       Index = 0
     end
     object dxRibbon1Tab2: TdxRibbonTab
+      Active = True
       Caption = 'EPI'
       Groups = <>
       Index = 1
-    end
-    object dxRibbon1Tab3: TdxRibbonTab
-      Caption = 'dxRibbon1Tab3'
-      Groups = <>
-      Index = 2
-    end
-    object dxRibbon1Tab4: TdxRibbonTab
-      Active = True
-      Caption = 'dxRibbon1Tab4'
-      Groups = <>
-      Index = 3
-    end
-    object dxRibbon1Tab5: TdxRibbonTab
-      Caption = 'dxRibbon1Tab5'
-      Groups = <>
-      Index = 4
     end
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
