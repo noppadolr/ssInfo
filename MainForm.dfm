@@ -40,6 +40,11 @@ object FormMain: TFormMain
       Groups = <>
       Index = 1
     end
+    object dxRibbon1Tab3: TdxRibbonTab
+      Caption = 'dxRibbon1Tab3'
+      Groups = <>
+      Index = 2
+    end
   end
   object dxRibbonStatusBar1: TdxRibbonStatusBar
     Left = 0
