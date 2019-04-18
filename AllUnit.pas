@@ -16,6 +16,8 @@ uses Windows, Messages, SysUtils, Classes,Forms,ShellAPI,cxExport,cxGridExportLi
 
 implementation
 
+uses ConnectionForm, DataModule, LoginForm, MainForm, PregOver42Form;
+
 
 
 function Unescape(s: AnsiString): WideString;

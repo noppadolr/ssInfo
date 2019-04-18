@@ -110,6 +110,10 @@ object FormMain: TFormMain
         item
           Visible = True
           ItemName = 'btnPregOver42'
+        end
+        item
+          Visible = True
+          ItemName = 'dxBarLargeButton1'
         end>
       OneOnRow = True
       Row = 0
@@ -123,6 +127,13 @@ object FormMain: TFormMain
       Hint = #3605#3633#3657#3591#3588#3619#3619#3616#3660' '#3648#3585#3636#3609' 42 Weeks'
       Visible = ivAlways
       OnClick = btnPregOver42Click
+    end
+    object dxBarLargeButton1: TdxBarLargeButton
+      Caption = 'New Button'
+      Category = 0
+      Hint = 'New Button'
+      Visible = ivAlways
+      OnClick = dxBarLargeButton1Click
     end
   end
 end

@@ -74,11 +74,8 @@ object FormPregOver42: TFormPregOver42
     Width = 856
     Height = 339
     Align = alClient
-    TabOrder = 6
-    ExplicitLeft = 312
-    ExplicitTop = 160
-    ExplicitWidth = 250
-    ExplicitHeight = 200
+    TabOrder = 2
+    ExplicitTop = 132
     object cxGridSumDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = MyDataSource1
@@ -95,6 +92,9 @@ object FormPregOver42: TFormPregOver42
           Column = cxGridSumDBTableView1c
         end>
       DataController.Summary.SummaryGroups = <>
+      OptionsSelection.CellSelect = False
+      OptionsSelection.HideFocusRectOnExit = False
+      OptionsSelection.InvertSelect = False
       OptionsView.FocusRect = False
       OptionsView.Footer = True
       OptionsView.GroupByBox = False
@@ -128,19 +128,123 @@ object FormPregOver42: TFormPregOver42
     end
   end
   object cxGridList: TcxGrid
-    Left = 560
-    Top = 148
-    Width = 250
-    Height = 200
-    TabOrder = 7
+    Left = 256
+    Top = 188
+    Width = 361
+    Height = 173
+    TabOrder = 3
     object cxGridListDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
+      DataController.DataSource = DNameList
       DataController.Summary.DefaultGroupSummaryItems = <>
-      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Format = #3592#3635#3609#3623#3609' #,### '#3619#3634#3618
+          Kind = skCount
+          Column = cxGridListDBTableView1NAME
+        end>
       DataController.Summary.SummaryGroups = <>
+      OptionsSelection.CellSelect = False
+      OptionsSelection.HideFocusRectOnExit = False
+      OptionsSelection.InvertSelect = False
+      OptionsSelection.UnselectFocusedRecordOnExit = False
       OptionsView.FocusRect = False
+      OptionsView.EditAutoHeightBorderColor = clMoneyGreen
       OptionsView.Footer = True
+      OptionsView.FooterAutoHeight = True
+      OptionsView.GridLineColor = clSkyBlue
       OptionsView.GroupByBox = False
+      Styles.Header = cxStyle1
+      object cxGridListDBTableView1HOSPCODE: TcxGridDBColumn
+        DataBinding.FieldName = 'HOSPCODE'
+        HeaderAlignmentHorz = taCenter
+        Width = 65
+      end
+      object cxGridListDBTableView1PID: TcxGridDBColumn
+        DataBinding.FieldName = 'PID'
+        HeaderAlignmentHorz = taCenter
+        Width = 60
+      end
+      object cxGridListDBTableView1NAME: TcxGridDBColumn
+        Caption = #3594#3639#3656#3629' - '#3626#3585#3640#3621
+        DataBinding.FieldName = 'NAME'
+        PropertiesClassName = 'TcxTextEditProperties'
+        FooterAlignmentHorz = taCenter
+        HeaderAlignmentHorz = taCenter
+        Width = 200
+      end
+      object cxGridListDBTableView1age_y: TcxGridDBColumn
+        Caption = #3629#3634#3618#3640
+        DataBinding.FieldName = 'age_y'
+        PropertiesClassName = 'TcxTextEditProperties'
+        Properties.Alignment.Horz = taCenter
+        HeaderAlignmentHorz = taCenter
+        Width = 50
+      end
+      object cxGridListDBTableView1GRAVIDA: TcxGridDBColumn
+        DataBinding.FieldName = 'GRAVIDA'
+        PropertiesClassName = 'TcxTextEditProperties'
+        Properties.Alignment.Horz = taCenter
+        HeaderAlignmentHorz = taCenter
+        Width = 65
+      end
+      object cxGridListDBTableView1pregageweek: TcxGridDBColumn
+        Caption = #3629#3634#3618#3640#3588#3619#3619#3616#3660
+        DataBinding.FieldName = 'pregageweek'
+        PropertiesClassName = 'TcxTextEditProperties'
+        Properties.Alignment.Horz = taCenter
+        HeaderAlignmentHorz = taCenter
+        Width = 80
+      end
+      object cxGridListDBTableView1LMP: TcxGridDBColumn
+        DataBinding.FieldName = 'LMP'
+        PropertiesClassName = 'TcxTextEditProperties'
+        Properties.Alignment.Horz = taCenter
+        HeaderAlignmentHorz = taCenter
+        Width = 75
+      end
+      object cxGridListDBTableView1EDC: TcxGridDBColumn
+        DataBinding.FieldName = 'EDC'
+        PropertiesClassName = 'TcxTextEditProperties'
+        Properties.Alignment.Horz = taCenter
+        HeaderAlignmentHorz = taCenter
+        Width = 75
+      end
+      object cxGridListDBTableView1VDRL_RESULT: TcxGridDBColumn
+        DataBinding.FieldName = 'VDRL_RESULT'
+        HeaderAlignmentHorz = taCenter
+        Width = 80
+      end
+      object cxGridListDBTableView1HB_RESULT: TcxGridDBColumn
+        DataBinding.FieldName = 'HB_RESULT'
+        HeaderAlignmentHorz = taCenter
+        Width = 80
+      end
+      object cxGridListDBTableView1THALASSEMIA: TcxGridDBColumn
+        DataBinding.FieldName = 'THALASSEMIA'
+        HeaderAlignmentHorz = taCenter
+        Width = 80
+      end
+      object cxGridListDBTableView1HCT_RESULT: TcxGridDBColumn
+        DataBinding.FieldName = 'HCT_RESULT'
+        PropertiesClassName = 'TcxTextEditProperties'
+        Properties.Alignment.Horz = taCenter
+        HeaderAlignmentHorz = taCenter
+        Width = 80
+      end
+      object cxGridListDBTableView1DATE_HCT: TcxGridDBColumn
+        Caption = #3623#3633#3609#3607#3638#3656#3648#3592#3634#3632' HCT'
+        DataBinding.FieldName = 'DATE_HCT'
+        PropertiesClassName = 'TcxTextEditProperties'
+        Properties.Alignment.Horz = taCenter
+        HeaderAlignmentHorz = taCenter
+        Width = 75
+      end
+      object cxGridListDBTableView1hosname: TcxGridDBColumn
+        DataBinding.FieldName = 'hosname'
+        HeaderAlignmentHorz = taCenter
+        Width = 300
+      end
     end
     object cxGridListLevel1: TcxGridLevel
       GridView = cxGridListDBTableView1
@@ -767,13 +871,97 @@ object FormPregOver42: TFormPregOver42
       'LEFT JOIN chospital as h on b.HOSPCODE=h.hoscode'
       ''
       'GROUP BY b.HOSPCODE ')
-    Active = True
-    Left = 408
-    Top = 48
+    Left = 352
+    Top = 64
   end
   object MyDataSource1: TMyDataSource
     DataSet = MyQuery1
-    Left = 504
-    Top = 48
+    Left = 352
+    Top = 24
+  end
+  object qNameList: TMyQuery
+    Connection = DMU.MyConnection1
+    SQL.Strings = (
+      ''
+      'SELECT pp.HOSPCODE,pp.PID'
+      ',concat(c.prename,p.`NAME`,'#39'   '#39',p.LNAME) as `NAME`'
+      ',p.age_y '
+      ',pp.GRAVIDA'
+      
+        ',concat(DATE_FORMAT(pp.LMP,"%d-%m-"),DATE_FORMAT(pp.LMP,"%Y")+54' +
+        '3) as LMP'
+      
+        ',concat(DATE_FORMAT(pp.EDC,"%d-%m-"),DATE_FORMAT(pp.EDC,"%Y")+54' +
+        '3) as EDC'
+      ''
+      ''
+      ',TIMESTAMPDIFF(WEEK,pp.LMP,CURDATE()) as pregageweek'
+      ',CASE'
+      #9'WHEN pp.VDRL_RESULT=1 THEN "'#3611#3585#3605#3636'"'
+      #9'WHEN pp.VDRL_RESULT=2 THEN "'#3612#3636#3604#3611#3585#3605#3636'"'
+      #9'WHEN pp.VDRL_RESULT=3 THEN "'#3652#3617#3656#3605#3619#3623#3592'"'
+      #9'WHEN pp.VDRL_RESULT=4 THEN "'#3619#3629#3612#3621'"'
+      #9'WHEN pp.VDRL_RESULT=9 THEN "'#3652#3617#3656#3607#3619#3634#3610'"'
+      'END AS VDRL_RESULT'
+      ''
+      ''
+      ',CASE'
+      #9'WHEN pp.HB_RESULT=1 THEN "'#3611#3585#3605#3636'"'
+      #9'WHEN pp.HB_RESULT=2 THEN "'#3612#3636#3604#3611#3585#3605#3636'"'
+      #9'WHEN pp.HB_RESULT=3 THEN "'#3652#3617#3656#3605#3619#3623#3592'"'
+      #9'WHEN pp.HB_RESULT=4 THEN "'#3619#3629#3612#3621'"'
+      #9'WHEN pp.HB_RESULT=9 THEN "'#3652#3617#3656#3607#3619#3634#3610'"'
+      'END AS HB_RESULT'
+      ''
+      ',CASE'
+      #9'WHEN pp.THALASSEMIA=1 THEN "'#3611#3585#3605#3636'"'
+      #9'WHEN pp.THALASSEMIA=2 THEN "'#3612#3636#3604#3611#3585#3605#3636'"'
+      #9'WHEN pp.THALASSEMIA=3 THEN "'#3652#3617#3656#3605#3619#3623#3592'"'
+      #9'WHEN pp.THALASSEMIA=4 THEN "'#3619#3629#3612#3621'"'
+      #9'WHEN pp.THALASSEMIA=9 THEN "'#3652#3617#3656#3607#3619#3634#3610'"'
+      'END AS THALASSEMIA'
+      ''
+      ',pp.HCT_RESULT'
+      
+        ',concat(DATE_FORMAT(pp.DATE_HCT,"%d-%m-"),DATE_FORMAT(pp.DATE_HC' +
+        'T,"%Y")+543) as DATE_HCT'
+      ''
+      ''
+      ',h.hosname'
+      ''
+      ''
+      'FROM prenatal as pp'
+      
+        'LEFT JOIN t_person_cid as p on pp.HOSPCODE=p.HOSPCODE AND pp.PID' +
+        '=p.PID'
+      'LEFT JOIN cprename as c on p.PRENAME=c.id_prename'
+      'LEFT JOIN chospital as h on pp.HOSPCODE=h.hoscode'
+      ''
+      'WHERE'
+      'concat(pp.HOSPCODE,pp.PID,pp.GRAVIDA) NOT in '
+      '(SELECT concat(l.HOSPCODE,l.PID,l.GRAVIDA)'
+      ' '
+      'FROM labor as l)'
+      'AND'
+      'p.DISCHARGE=9'
+      'AND p.check_typearea in (1,3)'
+      'AND TIMESTAMPDIFF(WEEK,pp.LMP,CURDATE())>=42')
+    Active = True
+    Left = 520
+    Top = 32
+  end
+  object DNameList: TMyDataSource
+    DataSet = qNameList
+    Left = 592
+    Top = 24
+  end
+  object cxStyleRepository1: TcxStyleRepository
+    Left = 264
+    PixelsPerInch = 96
+    object cxStyle1: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = clSkyBlue
+      TextColor = clDefault
+    end
   end
 end

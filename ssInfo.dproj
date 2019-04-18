@@ -110,7 +110,6 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="AllUnit.pas"/>
         <DCCReference Include="LoginForm.pas">
             <Form>FormLogin</Form>
             <FormType>dfm</FormType>
@@ -121,6 +120,11 @@
         </DCCReference>
         <DCCReference Include="PregOver42Form.pas">
             <Form>FormPregOver42</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UnitAll.pas"/>
+        <DCCReference Include="test.pas">
+            <Form>Form1</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

@@ -1,4 +1,4 @@
-unit PregOver42Form;
+﻿unit PregOver42Form;
 
 interface
 
@@ -38,6 +38,24 @@ type
     cxGridListDBTableView1: TcxGridDBTableView;
     cxGridListLevel1: TcxGridLevel;
     cxGridList: TcxGrid;
+    qNameList: TMyQuery;
+    DNameList: TMyDataSource;
+    cxGridListDBTableView1HOSPCODE: TcxGridDBColumn;
+    cxGridListDBTableView1PID: TcxGridDBColumn;
+    cxGridListDBTableView1NAME: TcxGridDBColumn;
+    cxGridListDBTableView1age_y: TcxGridDBColumn;
+    cxGridListDBTableView1GRAVIDA: TcxGridDBColumn;
+    cxGridListDBTableView1LMP: TcxGridDBColumn;
+    cxGridListDBTableView1EDC: TcxGridDBColumn;
+    cxGridListDBTableView1pregageweek: TcxGridDBColumn;
+    cxGridListDBTableView1VDRL_RESULT: TcxGridDBColumn;
+    cxGridListDBTableView1HB_RESULT: TcxGridDBColumn;
+    cxGridListDBTableView1THALASSEMIA: TcxGridDBColumn;
+    cxGridListDBTableView1HCT_RESULT: TcxGridDBColumn;
+    cxGridListDBTableView1DATE_HCT: TcxGridDBColumn;
+    cxGridListDBTableView1hosname: TcxGridDBColumn;
+    cxStyleRepository1: TcxStyleRepository;
+    cxStyle1: TcxStyle;
     procedure FormCreate(Sender: TObject);
     procedure btnNameListClick(Sender: TObject);
     procedure btnReportClick(Sender: TObject);
@@ -70,7 +88,7 @@ procedure TFormPregOver42.btnReportClick(Sender: TObject);
 begin
     cxGridSum.Visible:=true;
     btnNameList.Enabled:=true;
-    btnReport.Enabled:=true;
+    btnReport.Enabled:=false;
     cxGridlist.Visible:=false;
 
 end;
@@ -79,7 +97,11 @@ procedure TFormPregOver42.FormCreate(Sender: TObject);
 begin
   dxRibbonStatusBar1.Panels[1].Text:=FormMain.dxRibbonStatusBar1.Panels[1].Text;
   Caption:=FormMain.Caption+' :: '+fname;
-  MyQuery1.Connection:=DMU.MyConnection1;
+  MyQuery1.Open;
+   cxGridlist.Visible:=false;
+   btnReport.Enabled:=false;
+
+
 end;
 
 end.
